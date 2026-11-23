@@ -1,0 +1,24 @@
+name: Hello World Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  greeting:
+    runs-on: self-hosted
+
+    steps:
+      - name: Greeting
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Show Repository
+        run: echo "Repository: $GITHUB_REPOSITORY"
+
+      - name: Show Branch
+        run: echo "Branch: $GITHUB_REF_NAME"
+
+      - name: Show Commit
+        run: echo "Commit: $GITHUB_SHA"
